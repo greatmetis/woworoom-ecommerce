@@ -90,4 +90,4 @@ async loadOrders(){
 ## Author
 
 - Frontend Mentor - [@greatmetis](https://www.frontendmentor.io/profile/@greatmetis)
-- LinkedIn - [Chao-Chen(Metsi) Teng](https://www.linkedin.com/in/chao-chen-metis-teng-614633123/)
+- LinkedIn - [Chao-Chen(Metis) Teng](https://www.linkedin.com/in/chao-chen-metis-teng-614633123/) -- Let's connect 👋🏼

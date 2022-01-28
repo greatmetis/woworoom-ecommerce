@@ -73,7 +73,7 @@ const products = {
 
 const admin = {
   state:{
-    login:false,
+    login:true,
     orders:[]
   },
   mutations:{

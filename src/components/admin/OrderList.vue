@@ -70,8 +70,8 @@ export default {
   emits:['togglePopInfo','togglePaymentStatus','deleteOrder','deleteAllOrders'],
   props:['currentOrders'],
   components:{
-    PaymentTag,
-    Date
+    Date,
+    PaymentTag
   },
   data(){
     return{

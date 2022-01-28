@@ -85,15 +85,17 @@ data(){
 },
 methods:{
   ...mapActions(['fetch_order','edit_paymentStatus','delete_order','deleteAll_order']),
-  togglePaymentStatus(id,s){
+  async togglePaymentStatus(id,s){
+    this.loading = true
     let data = {
       "data":{
         "id":id,
         "paid":s
       }
     }
-    this.edit_paymentStatus(data)
-    this.loadOrders()
+    await this.edit_paymentStatus(data)
+    this.fetch_order()
+    this.loading = false
   },
   togglePopupInfo(content){
     this.popupContent = content
