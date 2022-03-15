@@ -20,7 +20,7 @@
       </div>
       <div v-else class='section-title'>
         <h1 >目前還沒有訂單喔！我們再接再厲</h1>
-        <h3> No orders at the moment. 💪🏼</h3>
+        <h3> No orders at the moment. Keep it up! 💪🏼</h3>
       </div>
     </div>
   </div>

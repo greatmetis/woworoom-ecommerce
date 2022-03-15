@@ -2,22 +2,22 @@
   <section class="wrap orderPage-list">
     <div class="orderTable-input-group">
       <div class="left">
-        <select name="payment-filter" class="order-status" v-model="paymentFilter" @change="sortPayment(this.paymentFilter)">
+        <select class="order-status" name="payment-filter" v-model="paymentFilter" @change="sortPayment(this.paymentFilter)">
             <option value="all">ALL</option>
             <option value="false">Unpaid</option>
             <option value="true">Paid</option>
         </select>
         <span class="order-number-info">{{countSortedOrders}} of {{countOrders}} orders found</span>
       </div>
-        <div>
-          <select name="date-filter" class="order-sort" v-model="dateFilter" @change="sortDate(this.dateFilter)">
-            <option disabled>Sort by date</option>
-            <option value="ascending" selected>Ascending by Date</option>
-            <option value="descending">Descending by Date</option>
-          </select>
-          <button class="discardAllBtn" @click="deleteAllOrders">Delete All</button>
+      <div class="right">
+        <select name="date-filter" class="order-sort" v-model="dateFilter" @change="sortDate(this.dateFilter)">
+          <option disabled>Sort by date</option>
+          <option value="ascending" selected>Ascending by Date</option>
+          <option value="descending">Descending by Date</option>
+        </select>
+        <button class="discardAllBtn" @click="deleteAllOrders">Delete All</button>
       </div>
-        </div>
+    </div>
     <div class="orderTableWrap">
         <table class="orderPage-table">
           <thead class="orderPage-table-header">
@@ -144,12 +144,20 @@ export default {
   flex-direction: column;
 }
 .orderPage-list .orderTable-input-group {
-  /* padding: 60px 10px; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   justify-content: space-between;
   margin-bottom: 12px;
+}
+.orderTable-input-group .left, .orderTable-input-group .right{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+}
+.orderTable-input-group .left .order-number-info{
+  padding: 5px;
 }
 .order-number-info{
   font-weight: 400;
@@ -165,6 +173,40 @@ export default {
   font-size: 1.25rem;
   cursor: pointer;
   margin-right: 16px;
+}
+
+@media(max-width:768px){
+  .orderTable-input-group .left, .orderTable-input-group .right{
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+  }
+  .orderTable-input-group .left{
+    align-items: flex-start;
+  }
+  .orderTable-input-group .right{
+    align-items: flex-end;
+  }
+  .orderPage-list .orderTable-input-group .order-status, .orderPage-list .orderTable-input-group .order-sort{
+    margin-right: 0px;
+    margin-bottom: 12px;
+  }
+}
+@media(max-width:480px){
+  .orderTable-input-group{
+    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+  }
+  .orderTable-input-group .left {
+    order:2;
+    margin-top: 12px;
+  }
+  .orderTable-input-group .right{
+    align-items: flex-start;
+  }
 }
 
 .orderPage-table {
