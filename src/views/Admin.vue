@@ -2,7 +2,9 @@
   <Navbar>
     <ul class="topBar-menu">
       <li><a href="#">後台管理</a></li>
-      <li><a href="#">管理員Login</a></li>
+      <router-link to="/">
+        <li class="page-switcher">Back to Front</li>
+      </router-link>
     </ul>
   </Navbar>
   <div v-if="isloggedin">

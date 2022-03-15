@@ -2,9 +2,9 @@
   <nav class="topBar">
         <div class="wrap">
             <h1><router-link to="/" class="logo">WOWOROOM</router-link></h1>
-            <span class="material-icons menuToggle">
-                menu
-            </span>
+            <router-link :to="toRoute">
+              <li class="page-switcher menuToggle">Switch Page</li>
+            </router-link>
             <slot></slot>
         </div>
     </nav>
@@ -12,7 +12,20 @@
 
 <script>
 export default {
-
+  name:'Navbar',
+  data(){
+    return{
+      isRoute:null,
+    }
+  },
+  computed:{
+    toRoute(){
+      return this.isRoute === '/' ? '/admin' : '/'
+    }
+  },
+  created(){
+    this.isRoute = this.$route.path
+  }
 }
 </script>
 
@@ -36,6 +49,26 @@ export default {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+
+.topBar-menu {
+  display: flex;
+  align-items: center;
+}
+.topBar-menu .page-switcher {
+  display: inline-block;
+  padding: 5px 15px;
+  background-color: transparent;
+  color: #000;
+  border: 4px solid #000;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.page-switcher:hover {
+  background-color: #000;
+  color: white;
+}
+
 
 @media (max-width: 1110px) {
   .topBar .wrap {
@@ -125,8 +158,11 @@ export default {
 @media (max-width: 767px) {
   .menuToggle {
     display: block;
-    font-size: 2rem;
-    padding: 15px;
+    color:#b39af9;
+  }
+  .menuToggle:hover{
+    color: #6a33ff;
+    background-color: transparent;
   }
 }
 

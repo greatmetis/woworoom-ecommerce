@@ -6,7 +6,7 @@
         <li><a href="#transport">運送方式</a></li>
         <li><a href="#orderInfo">立即預訂</a></li>
         <router-link to="/admin">
-          <li class="admin-page-button">Admin Page</li>
+          <li class="page-switcher">Admin Page</li>
         </router-link>
       </ul>
   </Navbar>
@@ -108,25 +108,6 @@ export default {
 }
 .slide-down-enter-from,.slide-down-leave-to{
   top:-200px;
-}
-.topBar-menu{
-  display: flex;
-  align-items: center;
-}
-.topBar-menu .admin-page-button{
-  display: inline-block;
-  padding: 5px 15px;
-  background-color: transparent;
-  color: #000;
-  border: 4px solid #000;
-  border-radius: 5px;
-  font-size: 1.25rem;
-  cursor: pointer;
-}
-
-.admin-page-button:hover{
-  background-color: #000;
-  color:white;
 }
 
 </style>
